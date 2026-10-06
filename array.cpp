@@ -75,44 +75,84 @@
 //program of swap the max num and min number from array
 
 
+//#include <iostream>
+//#include <climits>
+//using namespace std;
+//
+//void swapNum(int num[], int sz) {
+//
+//    int smallest = INT_MAX;
+//    int Greatest = INT_MIN;
+//
+//    int smallIndex = 0;
+//    int largeIndex = 0;
+//
+//    for (int i = 0; i < sz; i++) {
+//
+//        if (num[i] < smallest) {
+//            smallest = num[i];
+//            smallIndex = i;
+//        }
+//
+//        if (num[i] > Greatest) {
+//            Greatest = num[i];
+//            largeIndex = i;
+//        }
+//    }
+//
+//    swap(num[smallIndex], num[largeIndex]);
+//}
+//
+//int main() {
+//
+//    int num[] = {23, 56, 87, 54, 67};
+//    int sz = 5;
+//
+//    swapNum(num, sz);
+//
+//    for (int i = 0; i < sz; i++) {
+//        cout << num[i] << " ";
+//    }
+//
+//    return 0;
+//}
 #include <iostream>
-#include <climits>
+#include <string>
 using namespace std;
+struct Student
+{
 
-void swapNum(int num[], int sz) {
+    string name ;
+    int age;
+    int marks;
+};
 
-    int smallest = INT_MAX;
-    int Greatest = INT_MIN;
 
-    int smallIndex = 0;
-    int largeIndex = 0;
 
-    for (int i = 0; i < sz; i++) {
+int main(){
+    Student s[3];
+    for (int i=0;i<3;i++){
+        cout<<"The student Details"<<i+1<<endl;
+        cout<<"Name:";
+        cin>>s[i].name;
 
-        if (num[i] < smallest) {
-            smallest = num[i];
-            smallIndex = i;
-        }
+        cout<<"Age:";
+        cin>>s[i].age;
 
-        if (num[i] > Greatest) {
-            Greatest = num[i];
-            largeIndex = i;
-        }
+        cout<<"Marks:";
+        cin>>s[i].marks;
+
+
+        cout<<endl;
     }
-
-    swap(num[smallIndex], num[largeIndex]);
-}
-
-int main() {
-
-    int num[] = {23, 56, 87, 54, 67};
-    int sz = 5;
-
-    swapNum(num, sz);
-
-    for (int i = 0; i < sz; i++) {
-        cout << num[i] << " ";
+    cout<<"\nStudent Database\n";
+    for (int i = 0; i < 3; i++)
+    {
+        cout<<"Name"<<s[i].name<<endl;
+        cout<<"Age"<<s[i].age<<endl;
+        cout<<"Marks"<<s[i].marks<<endl;
     }
+    
 
     return 0;
 }

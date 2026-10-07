@@ -26,6 +26,31 @@
 //Brute Force Approach
 
 
+//#include <iostream>
+//#include <vector>
+//using namespace std;
+//
+//int main(){
+//    int n=7;
+//    int arr[7]{3,-4,5,4,-1,7,-8};
+//
+//    int maxSum=INT_MIN;
+//    for(int st =0 ; st<n ;st++){
+//        int currSum=0;
+//        for( int end =st;end<n;end++){
+//            currSum+=arr[end];
+//            maxSum=max(currSum,maxSum);
+//
+//            
+//        }
+//    }
+//    cout<<maxSum;
+//
+//    return 0;
+//}
+
+//kadan's Algorithm
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -33,18 +58,17 @@ using namespace std;
 int main(){
     int n=7;
     int arr[7]{3,-4,5,4,-1,7,-8};
+    int maxSum=INT_MAX;
+    int curtSum=0;
+    for(int i=0;i<n;i++){
+        curtSum+=arr[i];
+        maxSum=max(curtSum,maxSum);
 
-    int maxSum=INT_MIN;
-    for(int st =0 ; st<n ;st++){
-        int currSum=0;
-        for( int end =st;end<n;end++){
-            currSum+=arr[end];
-            maxSum=max(currSum,maxSum);
-
-            
+        if (curtSum<0){
+            curtSum=0;
         }
+        
     }
     cout<<maxSum;
-
     return 0;
 }

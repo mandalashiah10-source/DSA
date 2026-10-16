@@ -2,22 +2,33 @@
 #include <iostream>
 using namespace std;
 
-int powN(double a, int n) {
-    double result = 1;
+double myPow(double x, int n) {
+    long long binaryForm = n;
 
-    for (int i = 0; i < n; i++) {
-        result = result * a;
+    if (binaryForm < 0) {
+        x = 1.0 / x;
+        binaryForm = -binaryForm;
     }
 
-    return result;
+    double ans = 1.0;
+
+    while (binaryForm > 0) {
+        if (binaryForm % 2 != 0) {
+            ans *= x;
+        }
+
+        x *= x;
+        binaryForm /= 2;
+    }
+
+    return ans;
 }
 
 int main() {
-    double a = 2.1;
-    int n = 3;
+    double x = 2.0;
+    int n = 10;
 
-    cout << powN(a, n) << endl;
+    cout << myPow(x, n) << endl;
 
     return 0;
 }
-

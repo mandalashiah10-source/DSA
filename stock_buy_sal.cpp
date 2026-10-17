@@ -10,9 +10,9 @@ int main(){
     for ( int i =0 ; i <n ; i++){
         if ( stock[i]>maxProfit){
             maxProfit=max(maxProfit,stock[i]-bestBuy);
-
+            bestBuy=min(bestBuy, stock[i]);
         }
-        bestBuy=min(bestBuy, stock[i]);
+     
     }
     cout<<maxProfit;
     return 0;
